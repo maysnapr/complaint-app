@@ -313,7 +313,7 @@ if "Mahasiswa" in menu:
 
         kategori = st.selectbox(
             "Kategori Pengaduan",
-            ["Akademik", "Fasilitas", "IT/Sistem SPADA", "Administrasi", "Lainnya"],
+            ["Akademik", "Fasilitas", "Layanan IT", "Keamanan", "Lainnya"],
             help="Pilih kategori yang sesuai dengan pengaduan Anda"
         )
 
@@ -345,8 +345,8 @@ if "Mahasiswa" in menu:
             <div style="color:#475569; font-size:0.9rem; line-height:1.8;">
                 <p>🔹 <b>Akademik</b><br>Nilai, KRS, jadwal kuliah, dosen</p>
                 <p>🔹 <b>Fasilitas</b><br>Gedung, laboratorium, ruang kelas</p>
-                <p>🔹 <b>IT/Sistem SPADA</b><br>E-learning, akun mahasiswa</p>
-                <p>🔹 <b>Administrasi</b><br>Surat, legalisir, administrasi kampus</p>
+                <p>🔹 <b>Layanan IT</b><br>SPADA, SIAKAD,E-learning, akun mahasiswa</p>
+                <p>🔹 <b>Keamanan</b><br>Kejahatan, kecelakaan, gangguan keamanan</p>
                 <p>🔹 <b>Lainnya</b><br>Hal-hal di luar kategori di atas</p>
             </div>
         </div>
@@ -426,9 +426,10 @@ elif "Admin" in menu:
             total = len(df)
             tinggi = len(df[df["Prioritas"] == "Tinggi"]) if "Tinggi" in df["Prioritas"].values else 0
             sedang = len(df[df["Prioritas"] == "Sedang"]) if "Sedang" in df["Prioritas"].values else 0
+            rendah = len(df[df["Prioritas"] == "Rendah"]) if "Rendah" in df["Prioritas"].values else 0
             selesai = len(df[df["Status"] == "Selesai"]) if "Selesai" in df["Status"].values else 0
 
-            c1, c2, c3, c4 = st.columns(4)
+            c1, c2, c3, c4, c5 = st.columns(5)
             with c1:
                 st.markdown(f"""
                 <div class="stat-card" style="border-color:#2563eb;">
@@ -448,6 +449,12 @@ elif "Admin" in menu:
                     <div class="stat-label">Prioritas Sedang</div>
                 </div>""", unsafe_allow_html=True)
             with c4:
+                st.markdown(f"""
+                <div class="stat-card" style="border-color:#059669;">
+                    <div class="stat-number" style="color:#059669;">{rendah}</div>
+                    <div class="stat-label">Prioritas Rendah</div>
+                </div>""", unsafe_allow_html=True)
+            with c5:
                 st.markdown(f"""
                 <div class="stat-card" style="border-color:#059669;">
                     <div class="stat-number" style="color:#059669;">{selesai}</div>
