@@ -3,3 +3,6 @@ pandas
 sqlalchemy
 qrcode[pil]
 pyngrok
+joblib
+scikit-learn
+PySastrawi
