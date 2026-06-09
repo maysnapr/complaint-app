@@ -382,10 +382,10 @@ elif "Admin" in menu:
 
             # Ringkasan Statistik Utama
             total = len(df)
-            tinggi = len(df[df["Prioritas"] == "Tinggi"])
-            sedang = len(df[df["Prioritas"] == "Sedang"])
-            rendah = len(df[df["Prioritas"] == "Rendah"])
-            selesai = len(df[df["Status"] == "Selesai"])
+            tinggi = len(df[df["Prioritas"] == "tinggi"])
+            sedang = len(df[df["Prioritas"] == "sedang"])
+            rendah = len(df[df["Prioritas"] == "rendah"])
+            selesai = len(df[df["Status"] == "selesai"])
 
             c1, c2, c3, c4, c5 = st.columns(5)
             stats = [
