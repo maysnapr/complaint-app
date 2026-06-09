@@ -1,3 +1,5 @@
 streamlit
 pandas
 sqlalchemy
+qrcode[pil]
+pyngrok
