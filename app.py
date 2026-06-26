@@ -471,7 +471,7 @@ elif "Admin" in menu:
                         st.markdown(f"""
                         <div class="detail-complaint-card">
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-                                <span style="font-weight:700; color:#0f172a; font-size:1.05rem;">Berkas Kasus #{row['ID']}</span>
+                                <span style="font-weight:700; color:#0f172a; font-size:1.05rem;">Berkas Pengaduan #{row['ID']}</span>
                                 <span class="{badge_cls}">{badge_txt}</span>
                             </div>
                             <div class="detail-label">Rumpun Kategori</div>
@@ -508,7 +508,7 @@ elif "Admin" in menu:
                         """, unsafe_allow_html=True)
                     
                     st.markdown("<div style='height:25px;'></div>", unsafe_allow_html=True)
-                    if st.button("💾 Simpan & Perbarui Status Kasus", use_container_width=True):
+                    if st.button("💾 Simpan & Perbarui Status Pengaduan", use_container_width=True):
                         update_status(selected_id, new_status)
                         st.success(f"⚡ Sukses! Status Pengaduan #{selected_id} beralih menjadi berkas **{new_status}**")
                         st.rerun()
